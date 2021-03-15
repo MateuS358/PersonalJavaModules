@@ -33,39 +33,19 @@ public class Methods {
   }
 
   public static Boolean isNumber(String value) {
-    if (parseInteger(value) != -1 || parseDouble(value) != -1d) {
+    if (Double.parseDouble(parseNumber(value).toString()) != -1d) {
       return true;
     }
     return false;
   }
 
-  public static Integer parseInteger(String value) {
-    try {
+  public static Number parseNumber(String value) {
+    if(Integer.parseInt(value) != -1) {
       return Integer.parseInt(value);
-    } catch(Exception e) {
-      return -1;
-    }
-  }
-  public static Double parseDouble(String value) {
-    value = value.replaceAll(",", ".");
-    try {
+    } if(Double.parseDouble(value) != -1d) {
       return Double.parseDouble(value);
-    } catch(Exception e) {
-      return -1d;
-    }
-  }
-  public static Integer parseInteger(Number value) {
-    try {
-      return Integer.parseInt(value.toString());
-    } catch(Exception e) {
+    } else {
       return -1;
-    }
-  }
-  public static Double parseDouble(Number value) {
-    try {
-      return Double.parseDouble(value.toString());
-    } catch(Exception e) {
-      return -1d;
     }
   }
 

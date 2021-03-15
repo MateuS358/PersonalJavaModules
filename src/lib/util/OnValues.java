@@ -15,12 +15,8 @@ public class OnValues {
     return this.value;
   }
 
-  public Double getValueDouble() {
-    return parseDouble(this.value);
-  }
-
-  public Integer getValueInteger() {
-    return parseInteger(this.value);
+  public Number getValueNumber() {
+    return parseNumber(this.value);
   }
 
   public void set(String newValue) {
